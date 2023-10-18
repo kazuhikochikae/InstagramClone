@@ -1,11 +1,22 @@
-<h1>Log in</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Log in" %>
-<% end %>
+<div class="container new">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>facebook練習</h1>
+      <p class="txt">Facebookを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。</p>
+    </div>
+    <div class="col-lg-6 form">
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <div class="mail_box">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+      <div class="pass_box">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <p class="btn"><%= f.submit "ログイン" %></p>
+      <% end %>
+       <p class="Sign_btn"><%= link_to "新しいアカウントを作成", new_user_path %></p>
+    </div>
+  </div>
+</div>
