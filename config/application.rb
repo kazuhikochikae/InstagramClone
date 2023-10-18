@@ -20,3 +20,8 @@ module SessionLogin06
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+class Application < Rails::Application
+  config.time_zone = 'Tokyo'
+  config.active_record.default_timezone = :local
+end

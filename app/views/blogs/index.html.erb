@@ -6,9 +6,7 @@
         <%= link_to 'ストーリーズを作成', new_blog_path %>
         <span>写真、メッセージを共有しよう。</span>
       </p>
-      <% if @blogs.avatar? %>
-  <%= image_tag blog.avatar.url %>
-<% end %>
+
     </div>
     
     <% @blogs.each do |blog| %>
