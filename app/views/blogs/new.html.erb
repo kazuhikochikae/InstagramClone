@@ -1,3 +1,4 @@
+
 <div class="container show">
   <h1>新規投稿</h1>
   <div class="row">
@@ -17,22 +18,32 @@
         </ul>
       </div>
       <% end %>
+      <% end %>
+      <%= form_with(model: @blog, local: true, url:confirm_blogs_path) do |form| %>
       <div class="blog_title">
         <%= form.label :画像 %>
         <!-- 確認画面から新規作成画面に戻った時に、 -->
         <!-- アップロードした画像を表示させるための記述 -->
         <%= image_tag(@blog.img.url) if @blog.img && @blog.img.url %>
-        <%= form.file_field :img %>
+        <%= form.file_field :img%>
         <%= form.hidden_field :img_cache %>
       </div>
+      
       <div class="blog_content">
         <%= form.label :テキスト %>
         <%= form.text_field :content %>
       </div>
+
+      <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+      </div>
+
        <div class="actions">
       <%= form.submit %>
       </div>
       <% end %>
+      
     </div>
     <p class="out_txt">
       <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
