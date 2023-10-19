@@ -8,9 +8,10 @@ class BlogsController < ApplicationController
   def new
     @blog = Blog.new
   end
-
+  
   def show
     @blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   def create
@@ -43,9 +44,10 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = Blog.new(blog_params)
-
   end
 
+
+  
   private
 
   def set_blog
@@ -53,7 +55,7 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:img, :content, :avatar, :img_cache)
+    params.require(:blog).permit(:img, :content, :img_cache)
   end
 
 end

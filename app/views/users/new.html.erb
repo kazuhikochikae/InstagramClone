@@ -36,6 +36,12 @@
         <%= f.password_field :password_confirmation %>
       </p>
       <p>
+        <%= f.label :画像 %>
+        <%= f.file_field :avatar%>
+      </p>
+
+
+      <p>
         <%= f.submit "アカウント登録" %>
       </p>
       <% end %>
