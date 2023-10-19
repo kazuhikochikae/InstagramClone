@@ -7,6 +7,7 @@
         <span>写真、メッセージを共有しよう。</span>
       </p>
     </div>
+
     
     <% @blogs.each do |blog| %>
     <div class="col-lg-12 img_box">
@@ -23,13 +24,19 @@
         <span>
           <%= link_to '投稿の詳細', blog_path(blog.id) %>
         </span>
+        <% if blog.user == current_user %>
         <span>
           <%= link_to "投稿を編集", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %>
         </span>
         <span>
           <%= link_to '投稿を削除', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
         </span>
-      </p>
+        </p>
+<% else %>
+      <td></td>
+      <td></td>
+    <% end %>
+      
     </div>
     <% end %>
     <p class="out_txt">

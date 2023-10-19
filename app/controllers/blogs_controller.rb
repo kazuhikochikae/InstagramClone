@@ -26,20 +26,31 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    unless @blog.user == current_user
+      redirect_to  new_post_path
+    end
   end
 
   def update
     @blog = Blog.find(params[:id])
+    if @blog.user != current_user
+      redirect_to blogs_path
+  else
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: 'ブログを編集しました！'
     else
       render :edit
     end
   end
+end
 
   def destroy
+    if @post.user != current_user
+      redirect_to blogs_path
+    else
     @blog.destroy
     redirect_to blogs_path, notice: 'ブログを削除しました！'
+    end
   end
 
   def confirm

@@ -15,10 +15,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
   end
 
   def edit
     @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to user_path(@user.id)
+    end
   end
 
   def update
@@ -26,7 +30,11 @@ class UsersController < ApplicationController
     if @user.update_attribute(:avatar, params[:user][:avatar])
       redirect_to user_path(@user), notice: "画像を編集しました！"
     else
+      if @user.update(user_params)
+        redirect_to user_path(@user.id)
+      else
       render :edit
+      end
     end
   end
 

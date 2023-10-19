@@ -1,0 +1,8 @@
+<!-- app/views/pictures/favorites.html.erb -->
+<h1>お気に入りの画像一覧</h1>
+<ul>
+  <% @favorite_pictures.each do |picture| %>
+    <li><%= image_tag blog.img.url %></li>
+  <% end %>
+</ul>
+
