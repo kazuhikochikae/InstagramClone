@@ -1,6 +1,7 @@
-<h1>お気に入りの画像一覧</h1>
+<h1>お気に入りの一覧</h1>
+
 <ul>
-  <% @favorite_pictures.each do |picture| %>
-    <li><%= image_tag blog.img.url %></li>
+  <% @favorites.each do |favorite| %>
+    <li><%= favorite.blog.img %></li>
   <% end %>
 </ul>

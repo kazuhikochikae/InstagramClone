@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :favorites, only: [:create, :destroy]
-  resources :pictures
+  resources :pictures do
+    get 'favorites', on: :collection
+  end
 
   resources :blogs do
     collection do
