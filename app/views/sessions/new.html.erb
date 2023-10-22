@@ -1,10 +1,10 @@
 <div class="container new">
   <div class="row">
     <div class="col-lg-6">
-      <h1>facebook練習</h1>
-      <p class="txt">Facebookを使うと、友達や同僚、同級生、仲間たちとつながりを深められます。ケータイ、スマートフォンからもアクセスできます。</p>
+    <p class="img"><%= image_tag '/sumaho_inst.jpg' %></p>
     </div>
     <div class="col-lg-6 form">
+    <h1>Instagram練習</h1>
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
       <div class="mail_box">
         <%= f.label :email %>
@@ -16,7 +16,7 @@
       </div>
       <p class="btn"><%= f.submit "ログイン" %></p>
       <% end %>
-       <p class="Sign_btn"><%= link_to "新しいアカウントを作成", new_user_path %></p>
+       <p class="Sign_btn"><%= link_to "登録する", new_user_path %></p>
     </div>
   </div>
 </div>

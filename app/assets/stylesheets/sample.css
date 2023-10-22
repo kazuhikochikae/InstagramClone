@@ -1,9 +1,9 @@
 .new .col-lg-6.form {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 7px 7px 7px #cccccc;
-  padding: 20px;
+  padding: 30px;
   padding-bottom: 0;
+  border: 1px solid #ccc;
+  height: 355px;
 }
 
 .new p.btn {
@@ -27,9 +27,11 @@
 }
 
 .new h1 {
-  color: #0766ff;
+  color: #464646;
   font-weight: bold;
-  font-size: 44px;
+  font-size: 33px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .new p.txt {
@@ -50,6 +52,14 @@
   color: #fff;
 }
 
+.new .img {
+  text-align: center;
+}
+
+.new .img img {
+  max-width: 300px;
+}
+
 .entry input[type="submit"] {
   border: none;
   display: block;
@@ -68,8 +78,8 @@
   background: #fff;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 7px 7px 7px #cccccc;
   margin-top: 30px;
+  border: 1px solid #ccc;
 }
 
 .entry h1 {
@@ -100,6 +110,10 @@ header {
 .container.show {
   max-width: 500px;
   margin-top: 80px;
+}
+
+.show img {
+  width: 100%;
 }
 
 .show .txt {

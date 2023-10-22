@@ -3,6 +3,7 @@
   <!-- 確認画面でアップロードした画像を表示させるための記述 -->
   <%= image_tag(@blog.img.url) if @blog.img && @blog.img.url %>
   <%= form.hidden_field :img_cache %>
+    <%= form.text_field :content %>
   <%= form.submit "投稿する" %>
 <% end %>
 

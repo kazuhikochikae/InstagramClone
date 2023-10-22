@@ -1,7 +1,7 @@
 <div class="container show">
   <div class="row">
       <div class="col-lg-12">
-          <h1><%= @user.name %>さん、Facebookへようこそ</h1>
+          <h1><%= @user.name %>さん、Instagramへようこそ!</h1>
            <p><%= image_tag @user.avatar.url %></p>
            <p><%= link_to "画像を編集する", edit_user_path(@user.id) %></p>
            <p><%= link_to 'お気に入り一覧', "/pictures/favorites/" %></p>

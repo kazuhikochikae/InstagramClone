@@ -17,12 +17,16 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
+
     if @blog.save
+      # Send an email using Action Mailer
+      ContactMailer.contact_mail(@blog).deliver
       redirect_to blogs_path, notice: 'ブログを作成しました！'
     else
       render :new
     end
   end
+
 
   def edit
     @blog = Blog.find(params[:id])
@@ -44,17 +48,20 @@ class BlogsController < ApplicationController
   end
 end
 
-  def destroy
-    if @post.user != current_user
-      redirect_to blogs_path
-    else
+def destroy
+  @blog = Blog.find(params[:id])
+
+  if @blog.user != current_user
+    redirect_to blogs_path
+  else
     @blog.destroy
     redirect_to blogs_path, notice: 'ブログを削除しました！'
-    end
   end
+end
 
   def confirm
     @blog = Blog.new(blog_params)
+   
   end
 
 
