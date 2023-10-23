@@ -44,6 +44,10 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'rexml'
 
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+
 group :development do
   gem 'letter_opener_web'
 end
